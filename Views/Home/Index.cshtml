@@ -1,0 +1,61 @@
+﻿@model FirstResponsiveWebAppBrannen.Models.AgeCalculator
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <style>
+        body{
+            background-color: lightgray;
+        }
+    </style>
+    <script src="-/lib/jquery/jquery.min.js"></script>
+    <script src=" - /lib/popper.js/popper.min.js"></script>
+    <script src="-/lib/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+
+
+    <body>
+        <div class="container row mx-auto">
+            <h1 class="col-12 pl-0" >Age Calculator</h1>
+
+            <form class="col-4-md pl-0" asp-action="Index" method="post">
+
+                <div asp-validation-summary="All"></div>
+
+                <div>
+                    <label asp-for="Name">Name</label>
+                    <input class="form-control" asp-for="Name" />
+                </div>
+
+                <div>
+                    <label asp-for="BirthYear">BirthYear</label>
+                    <input class="form-control" asp-for="BirthYear" placeholder="19XX" />
+                </div>
+
+                <div>
+                    <label>Age</label>
+                    <input class="form-control" value="@ViewBag.Age" readonly />
+                </div>
+
+                <div class="mt-4" >
+                    <button type="submit" class="mr-4">Submit</button>
+
+                    <a asp-action="Index">Clear</a>
+                </div>
+
+            </form>
+        </div>
+    
+    </body>
+
+</html>
